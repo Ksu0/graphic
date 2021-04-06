@@ -26,7 +26,7 @@ struct TGA_Header
 
 constexpr uint16_t IMG_WIDTH = 1920;
 constexpr uint16_t IMG_HEIGHT = 1080;
-constexpr uint32_t COL_BACKGROUND = 0xff003f3f;
+constexpr uint32_t COL_BACKGROUND = 0xff994db5;
 constexpr uint32_t COL_FOREGROUND = 0xffcfcfcf;
 constexpr double rx = 15., ry = 15., rz = 300.,
 		xmax = 30., xmin = -30., ymax = 30., ymin = -30.,
@@ -105,7 +105,7 @@ int main()
 	hdr.img_type = 2;
 	hdr.img_desc = 0x28;
 
-	tga_file.open("output1.tga",std::ios::out|std::ios::binary);
+	tga_file.open("output.tga",std::ios::out|std::ios::binary);
 	// записываем заголовок и данные картинки
 	tga_file.write(reinterpret_cast<char*>(&hdr),sizeof(TGA_Header));
 		tga_file.write(reinterpret_cast<char*>(&picture[0]),IMG_WIDTH*IMG_HEIGHT*4);
